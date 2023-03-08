@@ -5,8 +5,8 @@ let gato = 0;
 
 function startClassification()
 {
-  navigator.mediaDevices.getUserMedia({ audio: true});
-    classifier = ml5.soundClassifier('https://teachablemachine.withgoogle.com/models/IouQjBE01/', modelReady);
+  navigator.mediaDevices.getUserMedia({ audio: true, video: false});
+    classifier = ml5.soundClassifier('https://teachablemachine.withgoogle.com/models/IouQjBE01/model.json', {probabilityThreshold: 0.7}, modelReady);
 }
 
 function modelReady(){
